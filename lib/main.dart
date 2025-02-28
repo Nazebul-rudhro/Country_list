@@ -42,7 +42,7 @@ class CountryListLogic extends Cubit<Map<String, dynamic>> {
 //   }
 // }
 
-class CountryDetailsLogic extends Cubit<Map<String, dynamic>?> {
+class CountryDetailsLogic extends Cubit {
   CountryDetailsLogic() : super(null);
 
   void goTodetailsScreen(BuildContext context, Map<String, dynamic> country) {
@@ -95,6 +95,7 @@ class CountryApp extends StatelessWidget {
                 return ListTile(
                   leading: Image.network(country['flag']),
                   title: Text(country['name']),
+                  subtitle: Text(country['short_description']),
                   onTap:
                       () => context
                           .read<CountryDetailsLogic>()
